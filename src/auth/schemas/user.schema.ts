@@ -1,10 +1,9 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
 
 @Schema({
   timestamps: true,
 })
-export class User extends Document {
+export class User {
   @Prop()
   first_name: string;
 
@@ -18,9 +17,9 @@ export class User extends Document {
   product: string;
 
   @Prop()
-  phone_number: string;
+  phone_number: number;
 
-  @Prop({ default: false })
+  @Prop()
   account_verified: boolean;
 }
 

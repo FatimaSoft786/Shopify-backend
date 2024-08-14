@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString, MinLength } from 'class-validator';
+import { IsBoolean, IsNotEmpty, IsNumber, IsString } from 'class-validator';
 
 export class SignUpDto {
   @IsNotEmpty()
@@ -18,7 +18,9 @@ export class SignUpDto {
   readonly product: string;
 
   @IsNotEmpty()
-  @IsString()
-  @MinLength(10)
-  readonly phone_number: string;
+  @IsNumber()
+  readonly phone_number: number;
+
+  @IsBoolean()
+  readonly account_verified: boolean;
 }
